@@ -16,13 +16,26 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Please enter x1 coordinates");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Please enter y1 coordinates");
+            double y1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Please enter x2 coordinates");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Please enter y2 coordinates");
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write(CalculateDistance(x1, y1,x2,y2));
+            
         }
 
         public static double CalculateDistance(double x1, double y1, double x2, double y2)
         {
-            //YOUR CODE HERE
-            return 0;
+            double resultx = x2 - x1;
+            double resulty = y2 - y1; 
+            
+            return Math.Sqrt((resultx * resultx) +(resulty * resulty));
         }
     }
 }

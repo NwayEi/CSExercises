@@ -15,14 +15,15 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+             Console.Write("Enter distance : ");
+            double distance = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine(CalculateFare(distance));
         }
 
-        public static double CalculateFare(double distance)
+        public static string CalculateFare(double distance)
         {
-            //YOUR CODE HERE
-            return 0;
-
+            return Math.Round(2.40 + distance * 0.4,1).ToString(".00");
         }
     }
 }

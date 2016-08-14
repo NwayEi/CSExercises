@@ -14,9 +14,10 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            Console.Write("Please Enter integer : ");
             string inputString = Console.ReadLine();
-            int inputInt = Convert.ToInt32(inputString);
-
+            int inputInt = Convert.ToInt32(inputString);                    
+              
             int result = square(inputInt);
 
             Console.WriteLine(result);
@@ -24,8 +25,9 @@ namespace CSExercises
 
         public static int square(int x)
         {
-            //PUT YOUR CODE HERE
-            return 0;
+
+            double result = Math.Pow(x, 2);
+            return Convert.ToInt32(result);
 
         }
     }

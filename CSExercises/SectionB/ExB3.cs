@@ -18,14 +18,24 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Enter Employee Salary : ");
+            String salary = Console.ReadLine();
+                  
+           Console.WriteLine(CalculateIncome(salary));                                
 
+            
         }
 
         public static string CalculateIncome(string salaryStr)
         {
-            //YOUR CODE HERE
-            return null;
+            double salary = Convert.ToDouble(salaryStr);
+            string calculated_salary="$";
+            if (salary > 0)
+                calculated_salary += (salary + (0.1 * salary) + (0.03 * salary)).ToString();
+            else
+                calculated_salary += "0.00";
+
+            return calculated_salary;
         }
     }
 }

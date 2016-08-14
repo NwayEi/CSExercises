@@ -13,13 +13,16 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.Write("Enter double precision number : ");
+            double input = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine(SQRT(input));
         }
 
         public static double SQRT(double x)
         {
-            //YOUR CODE HERE: return the square root of x
-            return 0;
+            
+            return Math.Sqrt(x);
 
         }
     }
