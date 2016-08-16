@@ -31,11 +31,21 @@ namespace CSExercises
 
         public static bool IsPalindrome(string phrase)
         {
-            //YOUR CODE HERE
-            return false;
+            int i=0;
+            int j=phrase.Length-1;
+            do
+            {
+                if (!phrase[i].ToString().Trim().ToLower().Equals(phrase[j].ToString().Trim().ToLower()))
+                    return false;
+                i++;
+                j--;
 
 
+            } while (i < j);
 
+          
+
+            return true;
 
         }
     }

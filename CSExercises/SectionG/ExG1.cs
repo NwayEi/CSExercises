@@ -31,8 +31,30 @@ namespace CSExercises
 
         public static int CountVowels(string phrase)
         {
-            //YOUR CODE HERE
-            return 0;
+            int vowelcount=0;
+
+            for(int i=0;i<phrase.Length;i++)
+            {
+               switch(phrase.Substring(i,1).ToUpper())
+               {
+                   case "A":
+                       vowelcount+=1;break;
+                   case "E":
+                       vowelcount+=1;break;
+                   case "I":
+                       vowelcount+=1;break;
+                   case "O":
+                       vowelcount+=1;break;
+                   case "U":
+                       vowelcount+=1;break;
+                   default:
+                       break;
+               }
+                  
+
+            }
+            
+            return vowelcount;
 
 
         }
@@ -40,8 +62,28 @@ namespace CSExercises
         public static int[] CountIndividualVowels(string phrase)
         {
             int[] vowelCount = new int[5];
-            //YOUR CODE HERE
 
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                switch (phrase.Substring(i, 1).ToUpper())
+                {
+                    case "A":
+                        vowelCount[0] += 1; break;
+                    case "E":
+                        vowelCount[1] += 1; break;
+                    case "I":
+                        vowelCount[2] += 1; break;
+                    case "O":
+                        vowelCount[3] += 1; break;
+                    case "U":
+                        vowelCount[4] += 1; break;
+                    default:
+                        break;
+                }
+
+
+            }
+            
 
 
             return vowelCount;

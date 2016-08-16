@@ -33,11 +33,15 @@ namespace CSExercises
             int min = 0;
             double avg = 0;
 
-            CalculateMinMaxAvg(sales, ref min, ref max, ref avg);
+           // CalculateMinMaxAvg(sales, ref min, ref max, ref avg);
+            Console.WriteLine(CalculateMinMonth(sales));
 
+            Console.WriteLine(CalculateMaxMonth(sales));
+            
+            /*
             Console.WriteLine("Maximum Sales: " + max);
             Console.WriteLine("Minimum Sales: " + min);
-            Console.WriteLine("Average Sales: " + avg);
+            Console.WriteLine("Average Sales: " + avg);*/
         }
 
         public static void CalculateMinMaxAvg(int[] sales, ref int minMonth, ref int maxMonth, ref double avg)
@@ -49,18 +53,59 @@ namespace CSExercises
         }
 
         public static int CalculateMinMonth(int[] sales)
-        {
-            //YOUR CODE HERE
-            return 0;
+        {            
+            int minmonth=0;
+            int temp;
+            for (int i = sales.Length-1; i > 0; i--)
+            {
+                
+                for (int j = 0; j < i; j++)
+                {
+                    
+                    if (sales[i] < sales[j])
+                    {
+                        temp = sales[j];
+                        sales[j] = sales[i];
+                        sales[i] = temp;
+
+                        minmonth = i;
+
+                    }
+                        
+                    
+                }
+            }
+
+            return minmonth;
 
         }
 
         public static int CalculateMaxMonth(int[] sales)
         {
-            //YOUR CODE HERE
-            return 0;
+            int maxmonth = 0;
+            int temp;
+            for (int i = sales.Length - 1; i > 0; i--)
+            {
+
+                for (int j = 0; j < i; j++)
+                {
+
+                    if (sales[i] < sales[j])
+                    {
+                        temp = sales[j];
+                        sales[j] = sales[i];
+                        sales[i] = temp;
+
+                        maxmonth = j;
+
+                    }
 
 
+                }
+            }
+
+            return maxmonth;
+           
 
         }
 
