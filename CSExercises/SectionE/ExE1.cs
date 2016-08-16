@@ -30,16 +30,29 @@ namespace CSExercises
 
         public static int CalculateFactorialInc(int n)
         {
-            //YOUR CODE HERE
-            return 0;
+            int factorail=1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                factorail *= i;
+               
+            }
+           return factorail;
 
 
         }
 
         public static int CalculateFactorialDec(int n)
         {
-            //YOUR CODE HERE
-            return 0;
+
+            int factorail = 1;
+
+            for (int i = n ; i != 0; i--)
+            {
+                factorail *= i;
+               
+            }
+            return factorail;
 
 
         }
