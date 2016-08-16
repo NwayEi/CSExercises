@@ -22,7 +22,15 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+          
+            Console.WriteLine("NO\t" + "INVERSE\t\t"+"SQUARE ROOT\t"+"SQUARE\t");
+            Console.WriteLine("..................................................");
+
+            for (double i = 1.0; i <= 10; i++)
+            {
+                Console.WriteLine(i.ToString(".0") + "\t" + Math.Pow(i, -1).ToString("0.0##") + "\t\t" + Math.Sqrt(i).ToString("#.0##") + "\t\t" + Math.Pow(i, 2).ToString("#.0"));
+            }
+            
         }
     }
 }

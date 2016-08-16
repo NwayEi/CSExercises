@@ -30,9 +30,8 @@ namespace CSExercises
 
         public static bool IsPerfectNumber(int n)
         {
-            //YOUR CODE HERE
+            
             return false;
-
 
         }
     }
