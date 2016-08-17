@@ -19,13 +19,37 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            string[,] studentMarks = new string[5, 2]
+           {
+               {"John","63"},{"Venkat","29"},
+               {"Mary","75"},{"Victor","82"},
+               {"Betty","55"}
+           };
+
+            PrintByMarks(studentMarks);
+           
+        }
+
+        public static void PrintByMarks(string[,] studentMarks)
+        {
+        
+
+            for (int i = 0; i < studentMarks.Length; i++)
+            {
+                string temp = "";
+
+                for(int j = 1 ; j < studentMarks.Length-1; j++)
+                {
+                    if (Convert.ToInt32(studentMarks[i, j]) < Convert.ToInt32(studentMarks[j, j]))
+                    {
+                        
+                    }
+                }
+                
 
 
 
-
-
-
+            }
         }
     }
 }

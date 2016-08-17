@@ -31,17 +31,37 @@ namespace CSExercises
 
         public static bool IsPalindrome(string phrase)
         {
-            int i=0;
-            int j=phrase.Length-1;
+           
+            int j=0;
+           
+            int arrsize=phrase.Length-1;
+            char[] trimePhrase=new char[phrase.Length-1];
+
+            for (int i = 0; i < phrase.Length; i++) 
+            {
+                if (!(phrase[i].ToString().Equals(" ") || phrase[i].ToString().Equals(",") || phrase[i].ToString().Equals(".")))
+                {
+                    trimePhrase[j] = phrase[i];
+                    j++;
+                }
+                else
+                {
+                    arrsize -= 1;
+                }
+            }
+
+            int first = 0;
+            int lastitem = arrsize;
+
             do
             {
-                if (!phrase[i].ToString().Trim().ToLower().Equals(phrase[j].ToString().Trim().ToLower()))
-                    return false;
-                i++;
-                j--;
+                if (!trimePhrase[first].ToString().ToLower().Equals(trimePhrase[lastitem].ToString().ToLower()))
+                        return false;
+                first++;
+                lastitem--;
 
 
-            } while (i < j);
+            } while (first < lastitem);
 
           
 

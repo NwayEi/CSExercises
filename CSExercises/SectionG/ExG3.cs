@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CSExercises
 {
@@ -20,9 +21,25 @@ namespace CSExercises
         }
 
         public static string ToTitleCase(string phrase)
-        {
-            //YOUR CODE HERE
-            return null;
+        {  
+            string[] wordList = phrase.Split(' ');
+            string result=null;
+
+            for (int i = 0; i < wordList.Length; i++)
+            {
+                for (int j = 0; j < wordList[i].Length; j++)
+                {
+                    if( j== 0)
+                        result += wordList[i].ToCharArray().GetValue(j).ToString().ToUpper();
+                    else
+                        result += wordList[i].ToCharArray().GetValue(j).ToString().ToLower();
+                    
+
+                }
+                result += " ";
+            }
+
+            return result;
 
 
         }
