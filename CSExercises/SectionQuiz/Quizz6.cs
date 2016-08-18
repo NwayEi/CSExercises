@@ -17,7 +17,10 @@ namespace CSExercises.SectionQuiz
 
         static void Main(string[] args)
         {
-            int annualIncome = 
+            int annualIncome = AskforIncome();
+            int taxBracket = GetTaxBracket(annualIncome);
+            double taxpayable = CalculateIncomeTax(annualIncome, taxBracket);
+            PrintResult(annualIncome, taxpayable);
         }
 
         public static int AskforIncome()
@@ -30,7 +33,40 @@ namespace CSExercises.SectionQuiz
         {
             int largetst = 0;
 
-            for(int i=0;i<minIncomeArray.Length;i++)
+            if (income < minIncomeArray[0])
+            {
+                largetst = -1;               
+
+            }
+          
+
+            for (int i = 0; i < minIncomeArray.Length; i++)
+            {
+                              
+                if (minIncomeArray[i] < income)
+                {
+                    largetst = i;
+                }
+            }
+
+            return largetst; 
+        }
+
+        public static double CalculateIncomeTax(int income, int index)
+        {
+            double payableTax;
+            if (index == -1)
+                payableTax = 0.0;
+
+            else
+                payableTax = (income - minIncomeArray[index]) * taxRateArray[index] + basePayableAmountArray[index];
+
+            return payableTax;
+        }
+
+        public static void PrintResult(int annualIncome, double payableTax)
+        {
+            Console.WriteLine("For taxable annual income of {0:C},the tax payable amount is {1:C}", annualIncome, payableTax);
         }
     }
 }
